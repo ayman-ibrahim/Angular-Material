@@ -3,19 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material.module';
+import { RouterModule, Routes } from '@angular/router';
+import { DemoModule } from './demo/demo.module';
+import { ToolbarComponent } from './contactmanager/components/toolbar/toolbar.component';
+
+
+let routes: Routes = [
+  { path: 'contactmanager', loadChildren: './contactmanager/contactmanager.module#ContactManagerModule' },
+  { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },  
+  { path: '**', redirectTo: 'demo' }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    RouterModule.forRoot(routes),
+    DemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

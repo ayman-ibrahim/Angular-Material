@@ -1,1 +1,42 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #mydrawer class="sidenav">
+        <button color="primary" mat-button routerLink="/customers">Customers</button>
+        <button color="primary" mat-button routerLink="/orders">Orders</button>
+        <button color="primary" mat-button routerLink="/messages">Messages</button>
+    </mat-drawer>
+    <div class="sidenav-content">
+
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+
+                <button mat-icon-button (click)="mydrawer.toggle()"> <mat-icon>menu</mat-icon> </button>
+                <span>Title</span>
+                <span class="spacer"></span>
+                <mat-icon>favorite</mat-icon>
+
+                <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+
+                  <mat-menu #appMenu="matMenu">
+                    <button mat-menu-item>Settings</button>
+                    <button mat-menu-item>Help</button>
+                    <button mat-menu-item disabled>Help</button>
+                  </mat-menu>
+
+            </mat-toolbar-row>
+
+            
+
+        </mat-toolbar>
+        
+          
+          
+
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+
+

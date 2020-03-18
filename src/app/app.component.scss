@@ -1,1 +1,24 @@
 // /@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.container .mat-drawer {
+    padding-left: 20px;
+    min-width: 200px;
+}
+
+.container .mat-drawer .mat-button {
+    display:block;
+    width:100%;
+    text-align:left;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

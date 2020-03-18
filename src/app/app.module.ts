@@ -7,23 +7,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { DemoModule } from './demo/demo.module';
 import { ToolbarComponent } from './contactmanager/components/toolbar/toolbar.component';
+import { ContactmanagerModule } from './contactmanager/contactmanager.module';
 
 
 let routes: Routes = [
-  { path: 'contactmanager', loadChildren: './contactmanager/contactmanager.module#ContactManagerModule' },
+  { path: 'contactmanager', loadChildren: './contactmanager/contactmanager.module#ContactmanagerModule' },
   { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },  
   { path: '**', redirectTo: 'demo' }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ToolbarComponent
+    AppComponent  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ContactmanagerModule,
     RouterModule.forRoot(routes),
     DemoModule
   ],

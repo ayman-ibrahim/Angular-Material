@@ -12,9 +12,7 @@ const routes: Routes = [
       children: [
         { path: '', component: MainContentComponent }
       ]
-
- },
-
+  },
   { path: '**', redirectTo: 'buttons' }
 ];
 
@@ -25,4 +23,9 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
-export class ContactmanagerModule { }
+
+export class ContactmanagerModule { 
+  constructor() {
+    console.log("ContactmanagerModule");
+  }
+}
